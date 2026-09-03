@@ -1,0 +1,11 @@
+# Planning and Routing
+
+Routing is the simplest form of planning: given one query, pick one tool. A keyword router matches trigger words to a tool name. It is fast, cheap, deterministic, and easy to debug, which makes it a good first layer even in sophisticated systems.
+
+Keyword routers fail in predictable ways. They are case sensitive unless the query is normalised. They match substrings, so the word "news" will match inside "newsletter" if the check is written as a substring test rather than a token test. They cannot handle a query that needs two tools, and they have no notion of order.
+
+Decomposition planning splits a goal into sub-goals, each of which is routed independently. A query such as "compare the weather in Lagos and Accra and then tell me the temperature difference" contains three sub-goals: two lookups and one calculation, and the calculation depends on the lookups.
+
+Plans should carry a stated reason for every step. The reason is what a reviewer, a human or a critic agent, uses to judge whether the plan is sound before any tool is called. A plan that cannot explain itself cannot be audited.
+
+Replanning is triggered when observation reveals that the world does not match the plan's assumptions: a tool failed, a document was missing, or a value was out of range.

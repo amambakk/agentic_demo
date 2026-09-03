@@ -1,0 +1,5 @@
+DATE: 2026-08-28
+SOURCE: offline-news-sim
+TITLE: Regional weather feed reports intermittent timeouts
+
+The regional weather aggregator has reported intermittent timeouts on first request, with retries generally succeeding. Downstream consumers are advised to implement retry with backoff rather than failing the whole request. Coverage gaps remain for smaller cities, which return not-found rather than an estimate.

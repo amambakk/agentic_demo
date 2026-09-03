@@ -1,0 +1,11 @@
+# Evaluating Agents
+
+Agent evaluation differs from model evaluation because the output is a trajectory, not a single string. Two runs can produce the same answer through very different paths, and only one of them may be reliable.
+
+Trajectory metrics include the number of steps taken, the number of tool calls, the tool selection accuracy against a labelled expectation, the retry count, and whether recovery succeeded when a tool was made to fail deliberately.
+
+Outcome metrics include task success, groundedness of the answer in retrieved evidence, and coverage of every sub-goal in the original request.
+
+Deterministic test fixtures matter. If tool failures are injected on a fixed schedule rather than at random, a recovery test either passes or fails for a real reason instead of flapping.
+
+Latency should be measured at the tail. The median tool call time hides the behaviour that users actually notice, so the ninety fifth and ninety ninth percentiles are the numbers worth tracking.

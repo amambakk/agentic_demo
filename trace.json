@@ -1,0 +1,299 @@
+[
+  {
+    "seq": 1,
+    "depth": 0,
+    "stage": "GOAL",
+    "label": "what is the weather in cork",
+    "detail": {
+      "agent": "agent"
+    },
+    "started_at": 0.001821299985749647,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 2,
+    "depth": 0,
+    "stage": "PLAN",
+    "label": "iteration 1",
+    "detail": {
+      "gaps": 0,
+      "steps": 1
+    },
+    "started_at": 0.003538499993737787,
+    "duration_ms": 2.17,
+    "status": "ok"
+  },
+  {
+    "seq": 3,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "#1 weather(city='') :: what is the weather in cork",
+    "detail": {},
+    "started_at": 0.005281999998260289,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 4,
+    "depth": 0,
+    "stage": "ACT",
+    "label": "weather",
+    "detail": {
+      "city": "",
+      "result": "1 article(s); top: Regional weather feed reports intermittent timeouts"
+    },
+    "started_at": 0.006521499977679923,
+    "duration_ms": 23.83,
+    "status": "recovered"
+  },
+  {
+    "seq": 5,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "not retryable",
+    "detail": {
+      "tool": "weather",
+      "kind": "invalid_input",
+      "msg": "no city supplied"
+    },
+    "started_at": 0.010855499975150451,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 6,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "falling back",
+    "detail": {
+      "frm": "weather",
+      "to": "web_search",
+      "because": "invalid_input"
+    },
+    "started_at": 0.012388199975248426,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 7,
+    "depth": 0,
+    "stage": "OBSERVE",
+    "label": "weather",
+    "detail": {
+      "grade": "strong",
+      "usable": true,
+      "detail": "[via web_search] 1 article(s); top: Regional weather feed reports intermittent timeouts"
+    },
+    "started_at": 0.03449749998981133,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 8,
+    "depth": 0,
+    "stage": "REFLECT",
+    "label": "iteration 1",
+    "detail": {
+      "verdict": "gaps remain (score 0.00, 1 issue(s))"
+    },
+    "started_at": 0.03482499998062849,
+    "duration_ms": 5.29,
+    "status": "ok"
+  },
+  {
+    "seq": 9,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "issue: evidence does not mention: cork",
+    "detail": {},
+    "started_at": 0.036976999981561676,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 10,
+    "depth": 0,
+    "stage": "NOTE",
+    "label": "replanning",
+    "detail": {
+      "gaps": "what about cork"
+    },
+    "started_at": 0.04413499997463077,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 11,
+    "depth": 0,
+    "stage": "PLAN",
+    "label": "iteration 2",
+    "detail": {
+      "gaps": 1,
+      "steps": 1
+    },
+    "started_at": 0.049951599998166785,
+    "duration_ms": 28.95,
+    "status": "ok"
+  },
+  {
+    "seq": 12,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "#1 rag_search(query='what about cork') :: what about cork",
+    "detail": {},
+    "started_at": 0.0842277999909129,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 13,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "replan driven by critic gaps",
+    "detail": {},
+    "started_at": 0.09235809999518096,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 14,
+    "depth": 0,
+    "stage": "ACT",
+    "label": "rag_search",
+    "detail": {
+      "query": "what about cork",
+      "result": "FAILED"
+    },
+    "started_at": 0.11018459999468178,
+    "duration_ms": 65.2,
+    "status": "failed"
+  },
+  {
+    "seq": 15,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "not retryable",
+    "detail": {
+      "tool": "rag_search",
+      "kind": "not_found",
+      "msg": "knowledge base returned nothing for 'what about cork'"
+    },
+    "started_at": 0.17812579998280853,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 16,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "falling back",
+    "detail": {
+      "frm": "rag_search",
+      "to": "web_search",
+      "because": "not_found"
+    },
+    "started_at": 0.17864999998710118,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 17,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "not retryable",
+    "detail": {
+      "tool": "web_search",
+      "kind": "not_found",
+      "msg": "no results for 'what about cork'"
+    },
+    "started_at": 0.17952099998365156,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 18,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "fallback failed",
+    "detail": {
+      "tool": "web_search",
+      "kind": "not_found"
+    },
+    "started_at": 0.17985139999655075,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 19,
+    "depth": 0,
+    "stage": "OBSERVE",
+    "label": "rag_search",
+    "detail": {
+      "grade": "none",
+      "usable": false,
+      "detail": "[FAILED] what about cork: knowledge base returned nothing for 'what about cork'"
+    },
+    "started_at": 0.1805537999898661,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 20,
+    "depth": 0,
+    "stage": "REFLECT",
+    "label": "iteration 2",
+    "detail": {
+      "verdict": "gaps remain (score 0.00, 1 issue(s))"
+    },
+    "started_at": 0.1832760999968741,
+    "duration_ms": 4.95,
+    "status": "ok"
+  },
+  {
+    "seq": 21,
+    "depth": 1,
+    "stage": "NOTE",
+    "label": "issue: rag_search failed: knowledge base returned nothing for 'what about cork' -- fall back to web_search or tell the user it is out of scope",
+    "detail": {},
+    "started_at": 0.19156669999938458,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 22,
+    "depth": 0,
+    "stage": "NOTE",
+    "label": "no new gaps to pursue; stopping and answering honestly",
+    "detail": {
+      "repeated": 1
+    },
+    "started_at": 0.19532479997724295,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 23,
+    "depth": 0,
+    "stage": "RESPOND",
+    "label": "answer composed",
+    "detail": {
+      "chars": 645
+    },
+    "started_at": 0.197260599990841,
+    "duration_ms": null,
+    "status": "ok"
+  },
+  {
+    "seq": 24,
+    "depth": 0,
+    "stage": "MEMORY",
+    "label": "episode stored",
+    "detail": {
+      "success": false
+    },
+    "started_at": 0.20562309998786077,
+    "duration_ms": null,
+    "status": "ok"
+  }
+]

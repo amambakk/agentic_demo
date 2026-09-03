@@ -1,0 +1,11 @@
+# Retrieval and Corrective RAG
+
+Retrieval turns a query into a ranked list of passages. The simplest useful ranking is term frequency inverse document frequency, usually shortened to TF-IDF. Term frequency rewards a passage for containing the query words often. Inverse document frequency penalises words that appear in most documents, because those words carry little signal.
+
+The score for a passage is the cosine similarity between the query vector and the passage vector. Cosine similarity is the dot product of the two vectors divided by the product of their lengths, which normalises away differences in passage length.
+
+Chunking matters as much as ranking. Passages that are too long dilute the signal, and passages that are too short lose the context needed to interpret them. Paragraph level chunks are a reasonable default.
+
+Retrieval augmented generation is usually abbreviated to RAG, and the corrective variant to CRAG. Naive RAG retrieves passages and answers from them unconditionally, even when the passages are irrelevant. Corrective RAG, or CRAG, adds a grading step: the retrieved passages are scored for relevance, and if the best score falls below a threshold the result is marked weak.
+
+A weak retrieval should trigger a different action, not a confident answer. Reasonable responses to weak retrieval are to rewrite the query, to fall back to a different source such as a search tool, or to tell the user that the knowledge base does not cover the question.

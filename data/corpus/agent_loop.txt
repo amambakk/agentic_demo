@@ -1,0 +1,15 @@
+# The Agent Loop
+
+An agentic system is a program that decides its own next action instead of following a fixed script. The classic loop has six stages: Goal, Plan, Act, Observe, Reflect, Respond. The loop repeats until the reflection stage decides the goal has been satisfied or a budget is exhausted.
+
+Goal is the user request plus any constraints. A good agent restates the goal internally so that later stages have something concrete to check progress against.
+
+Plan is the decomposition of the goal into ordered steps, where each step names a tool and the arguments for that tool. Planning may happen once up front, or incrementally after every observation. Incremental planning is called interleaved planning and is what the ReAct pattern uses.
+
+Act is the actual tool invocation. The agent does not answer from memory here; it calls a function, hits a database, or runs a calculation.
+
+Observe is where the raw tool output is parsed, graded, and turned into evidence. Observation is not passive: a good agent grades whether the output actually answers the sub-question.
+
+Reflect compares accumulated evidence against the original goal and decides whether to loop again. This is where gaps, contradictions, and failures are caught.
+
+Respond composes the final answer from observations, ideally with citations back to the evidence that produced it.

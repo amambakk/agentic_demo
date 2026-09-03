@@ -1,0 +1,11 @@
+# Multi Agent Collaboration
+
+A multi agent system splits a goal across several specialists that each have a narrow role, a narrow tool set, and a narrow success criterion. Typical roles are a researcher that gathers evidence, an analyst that computes and compares, a critic that checks the work, and a writer that composes the final answer.
+
+Specialisation helps because it shrinks the decision space. A researcher that can only retrieve cannot be tempted to invent a calculation, and an analyst that receives structured evidence does not have to parse prose.
+
+Agents coordinate through a shared workspace, often called a blackboard, or through explicit messages. A blackboard makes the shared state inspectable, which is a large debugging advantage over point to point messaging.
+
+Handoffs are the risky part. Evidence loses fidelity every time it is summarised for the next agent, so handoffs should pass structured records with citations rather than paraphrased prose.
+
+Multi agent designs are not automatically better than a single agent with the same tools. They add coordination cost and new failure modes such as deadlock, duplicated work, and disagreement without resolution. The gain comes from clearer role boundaries and independent review, not from the number of agents.

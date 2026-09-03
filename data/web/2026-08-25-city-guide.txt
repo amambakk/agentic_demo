@@ -1,0 +1,5 @@
+DATE: 2026-08-25
+SOURCE: offline-news-sim
+TITLE: City data snapshot: Lagos, Accra, Nairobi
+
+A snapshot of city reference data published today lists Lagos with an estimated metropolitan population of 15.4 million, Accra with 2.6 million, and Nairobi with 4.7 million. The publishers note these are estimates and that definitions of metropolitan boundaries vary.

@@ -1,0 +1,11 @@
+# Tool Use
+
+A tool is a contract, not merely a function. The contract has a name, a description, a typed argument list, and a predictable failure mode. The description matters more than the implementation, because the description is what the planner reads when it decides which tool to call.
+
+Tool specifications should state what the tool does, what it does not do, and what its arguments mean. A vague description such as "search" produces a router that calls it for everything. A precise description such as "search a local, offline snapshot of news articles published in the last thirty days" tells the planner exactly when the tool is appropriate.
+
+Arguments must be extracted from the goal before the call. Argument extraction is a common failure point: the planner picks the right tool but passes the wrong city, the wrong expression, or a null value.
+
+Tools should validate their own inputs and raise structured errors rather than returning strings that look like answers. An agent cannot recover from a failure it cannot detect.
+
+Every tool call should be logged with its arguments, its duration, its result, and its attempt number. This log is the trace, and the trace is the only way to debug a system whose control flow changes on every run.

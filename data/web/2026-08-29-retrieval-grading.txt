@@ -1,0 +1,5 @@
+DATE: 2026-08-29
+SOURCE: offline-news-sim
+TITLE: Retrieval grading becomes a default step
+
+Teams report that adding a relevance grader between retrieval and answer generation is now standard practice. The news this week is that the threshold is being tuned per corpus rather than set globally, because a small curated knowledge base and a large scraped one behave very differently at the same cutoff.

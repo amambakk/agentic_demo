@@ -1,0 +1,5 @@
+DATE: 2026-08-30
+SOURCE: offline-news-sim
+TITLE: Agent frameworks converge on typed tool contracts
+
+The latest release notes across several open agent frameworks show the same shift: tool definitions are moving from free-form docstrings to typed contracts with declared failure modes. Maintainers say the change cuts the most common production bug, which is an agent calling the right tool with the wrong arguments. Today's roundup also notes wider adoption of bounded reflection loops, capped at two or three cycles.

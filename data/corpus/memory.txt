@@ -1,0 +1,11 @@
+# Memory
+
+Agents use at least three kinds of memory. Working memory, sometimes called the scratchpad, holds the current goal, the current plan, and the observations gathered so far in this run. It is discarded when the run ends.
+
+Episodic memory stores completed runs: the goal, the plan that was used, whether it succeeded, and how long it took. Episodic memory lets an agent recognise a goal it has solved before and reuse the plan instead of rediscovering it. It also provides the raw material for evaluation, because past runs can be replayed and scored.
+
+Semantic memory is the knowledge base: documents, facts, and policies that the agent retrieves from rather than reasons from. Retrieval augmented generation is the technique of pulling relevant passages from semantic memory into working memory before answering.
+
+Memory writes should be explicit and observable. An agent that silently rewrites its own memory is very hard to debug, because the same input produces different behaviour on the second run with no visible cause.
+
+Forgetting is a feature. Unbounded memory grows until retrieval quality collapses, because the number of near-miss passages grows faster than the number of relevant ones.

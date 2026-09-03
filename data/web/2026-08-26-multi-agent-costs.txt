@@ -1,0 +1,5 @@
+DATE: 2026-08-26
+SOURCE: offline-news-sim
+TITLE: Multi-agent designs scrutinised on cost
+
+New benchmark results published today suggest multi-agent pipelines are frequently slower and more expensive than a single agent with the same tool set, unless the roles are genuinely independent. The reported wins come from independent review steps, not from adding more workers.

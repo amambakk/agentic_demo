@@ -1,0 +1,13 @@
+# Failure and Recovery
+
+Tool failures fall into categories, and the category determines the correct response. A transient failure, such as a timeout or a rate limit, should be retried with backoff. An invalid input failure, such as a malformed expression, should not be retried with the same arguments, because the same arguments will fail again; the agent should repair the arguments first.
+
+A not found failure, such as an unknown city or a missing document, means the tool was appropriate but the target does not exist. The right response is usually a fallback to a broader source, or a clear statement that the item is unknown.
+
+An unavailable failure means the tool itself is down. The agent should route around it using a fallback tool, and should record the outage so later steps do not retry the same dead dependency.
+
+Retries need limits. Two or three attempts with increasing delay is a common policy. Unlimited retries turn a small outage into a stalled agent.
+
+Fallback chains should be declared, not improvised. A mapping from primary tool to ordered alternates makes recovery behaviour predictable and testable.
+
+Every failure, every retry, and every fallback should appear in the trace, because a run that silently recovered looks identical to a run that never had a problem, and the difference matters when the recovery stops working.

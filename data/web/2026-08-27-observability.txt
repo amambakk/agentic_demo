@@ -1,0 +1,5 @@
+DATE: 2026-08-27
+SOURCE: offline-news-sim
+TITLE: Tracing is the top ask for agent operators
+
+A survey of operators running agents in production puts tracing at the top of the wish list, ahead of accuracy improvements. The reason given is that non-deterministic control flow makes post-hoc debugging impossible without a per-step log of arguments, durations, retries, and fallbacks.

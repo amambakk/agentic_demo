@@ -1,0 +1,11 @@
+# Reflection and Self Critique
+
+Reflection is the stage where an agent evaluates its own work before showing it to a user. A critic examines the goal, the plan, and the observations, and produces a verdict plus a list of concrete gaps.
+
+Useful reflection checks are mechanical rather than vague. Did every step in the plan produce an observation? Did any tool fail without a successful retry or fallback? Does the evidence mention every key term from the goal? Were any retrievals graded weak? Is any observation contradicted by another?
+
+Reflection must be bounded. An agent that reflects forever never answers, and each extra loop costs time and money. A budget of two or three replanning cycles is typical, after which the agent answers with whatever it has and states its own uncertainty.
+
+Honest uncertainty is a feature of a good agent. An answer that says which sub-question could not be resolved is more useful than a fluent answer that quietly omits it.
+
+Reflection is also where a failed run becomes a learned lesson: the critic's gap list can be written to episodic memory so the same mistake is anticipated next time.

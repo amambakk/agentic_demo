@@ -1,0 +1,30 @@
+[
+  {
+    "goal": "explain the role of the critic in an agent loop",
+    "plan": [
+      "#1 rag_search(query='explain the role of the critic in an agent loop') :: explain the role of the critic in an agent loop"
+    ],
+    "tools_used": [
+      "rag_search"
+    ],
+    "success": true,
+    "gaps": [],
+    "answer": "Goal: explain the role of the critic in an agent loop\n\nWhat I found:\n  - A multi agent system splits a goal across several specialists that each have a narrow role, a narrow tool set, and a narrow success criterion. Typical roles are a researcher that gathers evidence, ... [multi_agent.txt#p0]\n  - Plans should carry a stated reason for every step. The reason is what a reviewer, a human or a critic agent, uses to judge whether the plan is sound before any tool is called. A plan that cannot ex... [planning.txt#p3]\n\nSources: [multi_agent.txt#p0] [planning.txt#p3]\nConfidence: high (score 0.75)",
+    "duration_ms": 7.6,
+    "at": 1788345999.8151987
+  },
+  {
+    "goal": "explain the role of the critic in an agent loop",
+    "plan": [
+      "#1 rag_search(query='explain the role of the critic in an agent loop') :: explain the role of the critic in an agent loop"
+    ],
+    "tools_used": [
+      "rag_search"
+    ],
+    "success": true,
+    "gaps": [],
+    "answer": "Goal: explain the role of the critic in an agent loop\n\nWhat I found:\n  - A multi agent system splits a goal across several specialists that each have a narrow role, a narrow tool set, and a narrow success criterion. Typical roles are a researcher that gathers evidence, ... [multi_agent.txt#p0]\n  - Plans should carry a stated reason for every step. The reason is what a reviewer, a human or a critic agent, uses to judge whether the plan is sound before any tool is called. A plan that cannot ex... [planning.txt#p3]\n\nSources: [multi_agent.txt#p0] [planning.txt#p3]\nConfidence: high (score 0.75)",
+    "duration_ms": 8.84,
+    "at": 1788345999.8426304
+  }
+]
